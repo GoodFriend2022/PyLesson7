@@ -1,0 +1,5 @@
+bus1, o525kx
+bus2, t920on
+bus3, a555aa
+bus4, o222oo
+bus5, k555hh
