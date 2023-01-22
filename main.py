@@ -9,7 +9,8 @@ menu_items = [
     ("4", "Запись водителей"),
     ("5", "Вывод маршрута"),
     ("6", "Запись маршрута"),
-    ("7", "Выход")]
+    ("7", "Удалить маршрут")
+    ("8", "Выход")]
 
 # menu = Menu(menu_items)
 # menu.run('>: ')
@@ -20,7 +21,7 @@ user_text = input('Введите номер меню: ')
 if user_text == '1':
     f.show('buses.txt')
 elif user_text == '2':
-    f.add_to_file('buses.txt', f.bus)
+    f.add_to_file('buse.txt', f.bus)
 elif user_text == '3':
     f.show('drivers.txt')
 elif user_text == '4':
@@ -28,4 +29,9 @@ elif user_text == '4':
 elif user_text == '5':
     print(f.convert_route())
 elif user_text == '6':
-    f.add_to_file('way.txt', f.route)
+    f.add_to_file('temp.txt', f.route, 'w')
+    with open('way.txt', 'a', encoding='utf8') as datafile:
+        datafile.write(', '.join(f.invers_route()[0]))
+
+
+
